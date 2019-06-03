@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon-precomposed" href="${g.resource(dir: 'images', file: 'favicon-152.png')}"/>
     <asset:stylesheet href="bootstrap.min.css"/>
     <asset:stylesheet href="app.css"/>
+    <asset:stylesheet href="custom.less.css"/>
     <!--[if lt IE 9]>
     <asset:javascript src="respond.min.js"/>
     <![endif]-->
@@ -58,9 +59,6 @@
                 <div class="card-header">
                   <h4 class="card-title">
                     <div class="logo">
-                        <a href="${grailsApplication.config.rundeck.gui.titleLink ? enc(attr:grailsApplication.config.rundeck.gui.titleLink) : g.createLink(uri: '/')}" title="Home">
-                          <img src="${resource(dir: 'images', file: 'rundeck-full-logo-black.png')}" alt="Rundeck" style="height: 20px; width: auto;"/>
-                        </a>
 
                         <g:set var="userDefinedLogo" value="${grailsApplication.config.rundeck?.gui?.logo}"/>
                         <g:if test="${userDefinedLogo}">
@@ -93,3 +91,4 @@
 </div>
 </body>
 </html>
+

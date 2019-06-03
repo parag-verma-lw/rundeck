@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon-precomposed" href="${g.resource(dir: 'images', file: 'favicon-152.png')}"/>
     <asset:stylesheet href="bootstrap.min.css"/>
     <asset:stylesheet href="app.css"/>
+    <asset:stylesheet href="custom.less.css"/>
     <!--[if lt IE 9]>
     <asset:javascript src="respond.min.js"/>
     <![endif]-->
@@ -44,6 +45,7 @@
             oopsEmbeddedLogin();
         }
         //-->
+		console.log("Modified!");
     </script>
     <style type="text/css">
         .sso-login-container {
@@ -97,14 +99,11 @@
                   <div class="card-header">
                     <h3 class="card-title">
                       <div class="logo">
-                          <a href="${grailsApplication.config.rundeck.gui.titleLink ? enc(attr:grailsApplication.config.rundeck.gui.titleLink) : g.createLink(uri: '/')}" title="Home">
-                            <img src="${resource(dir: 'images', file: 'rundeck-full-logo-black.png')}" alt="Rundeck" style="height: 20px; width: auto;"/>
-                          </a>
                           <g:set var="userDefinedLogo" value="${grailsApplication.config.rundeck?.gui?.logo}"/>
                           <g:if test="${userDefinedLogo}">
                             <g:set var="userAssetBase" value="/user-assets" />
                             <g:set var="safeUserLogo" value="${userDefinedLogo.toString().encodeAsSanitizedHTML()}" />
-                            <div style="margin-top:2em">
+                            <div>
                               <img src="${g.createLink(uri:userAssetBase+"/"+safeUserLogo)}">
                             </div>
                           </g:if>
@@ -132,7 +131,6 @@
                           </div>
                     </g:if>
                     <!--/SSO Login Feature-->
-                    <g:showLocalLogin>
                     <g:set var="loginmsg" value="${grailsApplication.config.rundeck?.gui?.login?.welcome ?: g.message(code: 'gui.login.welcome', default: '')}"/>
                     <g:if test="${loginmsg}">
                       <div style="margin-bottom:2em;">
@@ -152,10 +150,6 @@
                         <label for="password"><g:message code="user.login.password.label"/></label>
                         <input type="password" name="j_password" id="password" class="form-control input-no-border"/>
                     </div>
-                        <div class="card-footer text-center">
-                            <button type="submit" id="btn-login" class="btn btn-fill btn-wd "><g:message code="user.login.login.button"/></button>
-                        </div>
-                    </g:showLocalLogin>
                   </div>
                   <div class="card-footer text-center">
                     <g:if test="${flash.loginerror}">
@@ -163,6 +157,7 @@
                           <span><g:enc>${flash.loginerror}</g:enc></span>
                       </div>
                     </g:if>
+                    <button type="submit" id="btn-login" class="btn btn-fill btn-wd "><g:message code="user.login.login.button"/></button>
 
                     <g:set var="footermessagehtml" value="${grailsApplication.config.rundeck?.gui?.login?.footerMessageHtml ?: ''}"/>
                     <g:if test="${footermessagehtml}">
@@ -195,3 +190,4 @@
 </div>
 </body>
 </html>
+

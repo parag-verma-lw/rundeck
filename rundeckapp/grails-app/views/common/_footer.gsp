@@ -41,22 +41,12 @@
 <footer class="footer">
   <div class="container-fluid">
     <div class="copyright pull-left">
-        &copy; Copyright 2019 <a href="http://rundeck.com">Rundeck, Inc.</a>
+        &copy; Copyright 2019 <a href="https://lucidworks.com">Lucidworks, Inc.</a>
 
         All rights reserved.
     </div>
     <nav class="pull-right">
-        <ul>
-
-            <li>
-                <g:link controller="menu" action="licenses"><g:message code="licenses"/></g:link>
-            </li>
-            <li>
-                <a href="${enc(attr: g.helpLinkUrl())}" class="help ">
-                    <g:message code="help"/>
-                </a>
-            </li>
-        </ul>
     </nav>
   </div>
 </footer>
+
