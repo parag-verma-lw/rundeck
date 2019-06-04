@@ -2,3 +2,4 @@ rundeckapp/grails-app/views/user/login.gsp - Changed Frontend
 rundeckapp/grails-app/views/user/loggedout.gsp - Changed Frontend
 rundeckapp/grails-app/views/common/_footer.gsp - Changed Frontend
 rundeckapp/grails-app/assets/scss/custom/sidebar.scss - Commented out background image in .sidebar .logo
+rundeckapp/grails-app/assets/scss/custom/rundeck-icon.scss - Commented background image in .rd-icon .app-logo
